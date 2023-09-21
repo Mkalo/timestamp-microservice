@@ -1,4 +1,5 @@
 ```
-npm install
-npm run start
+yarn install
+yarn start
+yarn deploy
 ```
