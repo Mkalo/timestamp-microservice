@@ -1,22 +1,33 @@
-import { Hono } from 'hono'
-import { handle } from 'hono/vercel'
-import { zValidator } from '@hono/zod-validator';
+import { Hono } from 'hono';
+import { handle } from 'hono/vercel';
 import { z } from 'zod';
+import { cors } from 'hono/cors';
 
 export const config = {
   runtime: 'edge',
 };
 
-export const app = new Hono().basePath('/api');
+export const app = new Hono({ strict: false }).basePath('/api');
 
-app.get('/', (c) => c.json({ message: 'Hello Hono!' }));
+app.use('/api/*', cors());
 
-app.get('/hello/:name',
-  zValidator('param', z.object({
-    name: z.string().min(3),
-  })),
+const dateParamsSchema = z.object({
+  date: z.coerce.date().optional(),
+});
+
+app.get('/:date?',
   (c) => {
-    return c.json({ message: `Hello, ${c.req.param("name")}!` })
+    const res = dateParamsSchema.safeParse(c.req.param());
+    if (!res.success) {
+      return c.json({ error: "Invalid Date" });
+    }
+
+    const date = res.data.date ?? new Date();
+
+    return c.json({ 
+      unix: date.getTime(),
+      utc: date.toUTCString(),  
+    });
   }
 );
 
