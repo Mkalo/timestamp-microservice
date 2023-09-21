@@ -29,7 +29,7 @@ app.get('/:date?',
   (c) => {
     const res = dateParamsSchema.safeParse(c.req.param());
     if (!res.success) {
-      return c.json({ error: res.error.issues[0].message });
+      return c.json({ error: "Invalid Date" });
     }
 
     const { date } = res.data;
