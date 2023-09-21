@@ -1,7 +1,6 @@
 {
   "scripts": {
-    "start": "vercel dev",
-    "dev": "vercel dev"
+    "start": "vercel dev"
   },
   "dependencies": {
     "@hono/zod-validator": "^0.1.8",
