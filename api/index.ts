@@ -16,7 +16,7 @@ app.get('/hello/:name',
     name: z.string().min(3),
   })),
   (c) => {
-    return c.json({ message: `Hello ${c.req.param.name}!` })
+    return c.json({ message: `Hello, ${c.req.param("name")}!` })
   }
 );
 
