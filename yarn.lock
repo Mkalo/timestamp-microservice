@@ -1737,6 +1737,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@hono/zod-validator@npm:^0.1.8":
+  version: 0.1.8
+  resolution: "@hono/zod-validator@npm:0.1.8"
+  peerDependencies:
+    hono: 3.*
+    zod: ^3.19.1
+  checksum: dd1b28307c9b890939ffbb9a0052f08424aae6a96e3074248f3f6e4c787949d3681663c1eebf8ba9ba296e10f59c432075aebe45bdea38572f42ca1bb3259055
+  languageName: node
+  linkType: hard
+
 "@isaacs/cliui@npm:^8.0.2":
   version: 8.0.2
   resolution: "@isaacs/cliui@npm:8.0.2"
@@ -7412,10 +7422,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
+    "@hono/zod-validator": ^0.1.8
     "@types/node": ^20.6.3
     hono: ^3.6.0
     typescript: ^5.2.2
     vercel: ^29.1.1
+    zod: ^3.22.2
   languageName: unknown
   linkType: soft
 
@@ -8715,6 +8727,13 @@ __metadata:
   version: 0.1.0
   resolution: "yocto-queue@npm:0.1.0"
   checksum: f77b3d8d00310def622123df93d4ee654fc6a0096182af8bd60679ddcdfb3474c56c6c7190817c84a2785648cdee9d721c0154eb45698c62176c322fb46fc700
+  languageName: node
+  linkType: hard
+
+"zod@npm:^3.22.2":
+  version: 3.22.2
+  resolution: "zod@npm:3.22.2"
+  checksum: 231e2180c8eabb56e88680d80baff5cf6cbe6d64df3c44c50ebe52f73081ecd0229b1c7215b9552537f537a36d9e36afac2737ddd86dc14e3519bdbc777e82b9
   languageName: node
   linkType: hard
 
