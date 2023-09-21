@@ -18,7 +18,7 @@ const dateParamsSchema = z.object({
 app.get('/:date?',
   (c) => {
     const res = dateParamsSchema.safeParse(c.req.param());
-    if (!res.success) {
+    if (!res.success || isNaN(res.data.date.getTime())) {
       return c.json({ error: "Invalid Date" });
     }
 
