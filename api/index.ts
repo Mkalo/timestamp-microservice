@@ -32,7 +32,7 @@ app.get('/:date?',
       return c.json({ error: res.error.message });
     }
 
-    const date = res.data.date ?? new Date();
+    const { date } = res.data;
 
     return c.json({ 
       unix: date.getTime(),
