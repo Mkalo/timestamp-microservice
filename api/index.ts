@@ -9,7 +9,7 @@ export const config = {
 
 export const app = new Hono({ strict: false }).basePath('/api');
 
-app.use('/api/*', cors());
+app.use('*', cors());
 
 const dateParamsSchema = z.object({
   date: z.string().optional().transform((v) => v ? isNaN(Number(v)) ? new Date(v) : new Date(Number(v)) : new Date()),
