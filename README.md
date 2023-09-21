@@ -1,5 +1,6 @@
+# Timestamp Microservice
+
 ```
 yarn install
 yarn start
-yarn deploy
 ```
